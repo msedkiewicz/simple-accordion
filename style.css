@@ -49,11 +49,13 @@ h1 {
     /* transform: rotate(45deg); alternative */
 }
 .accordion-item-body{
+    display: none;
     padding: 1rem;
     line-height: 1.5rem;
-    border-top: 3px solid;
-    border-image: linear-gradient(to right, #008f68, #fae042) 1;
+    border-top: 2px solid;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
 }
 /* .accordion-item-body-content {
 
 } */
+.accordion-item-header.active + .accordion-item-body {display: block;}
