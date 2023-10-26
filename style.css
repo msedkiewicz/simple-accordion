@@ -42,7 +42,18 @@ h1 {
     font-size: 2rem;
     position: absolute;
     right: 1rem;
+    /* transition: transform 0.2s ease-in-out; alternative */
 }
 .accordion-item-header.active::after {
     content: "\2212";
+    /* transform: rotate(45deg); alternative */
 }
+.accordion-item-body{
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #008f68, #fae042) 1;
+}
+/* .accordion-item-body-content {
+
+} */
