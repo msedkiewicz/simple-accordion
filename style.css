@@ -38,24 +38,27 @@ h1 {
   cursor: pointer;
 }
 .accordion-item-header::after {
-    content: "\002B"; /* css entity */
-    font-size: 2rem;
-    position: absolute;
-    right: 1rem;
-    /* transition: transform 0.2s ease-in-out; alternative */
+  content: "\002B"; /* css entity */
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  /* transition: transform 0.2s ease-in-out; alternative */
 }
 .accordion-item-header.active::after {
-    content: "\2212";
-    /* transform: rotate(45deg); alternative */
+  content: "\2212";
+  /* transform: rotate(45deg); alternative */
 }
-.accordion-item-body{
-    display: none;
-    padding: 1rem;
-    line-height: 1.5rem;
-    border-top: 2px solid;
-    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.1s ease-in-out;
 }
-/* .accordion-item-body-content {
-
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 2px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+/* .accordion-item-header.active + .accordion-item-body {
+  max-height: 100%;
 } */
-.accordion-item-header.active + .accordion-item-body {display: block;}
