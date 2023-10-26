@@ -4,6 +4,11 @@ const accordionItemHeaders = document.querySelectorAll(
 
 accordionItemHeaders.forEach((accordionItemHeader) => {
   accordionItemHeader.addEventListener("click", (event) => {
+    const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
+    if (currentlyActiveAccordionItemHeader && (currentlyActiveAccordionItemHeader !== accordionItemHeader)){
+        currentlyActiveAccordionItemHeader.classList.remove("active");
+        currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+    }
     accordionItemHeader.classList.toggle("active");
     const accordionItemBody = accordionItemHeader.nextElementSibling;
     if (accordionItemHeader.classList.contains("active")) {
